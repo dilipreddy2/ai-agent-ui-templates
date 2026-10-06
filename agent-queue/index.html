@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Agent Task Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Task queue</a></nav>
+  <button class="primary" id="clearDone">Clear finished</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Agent Task Queue</p><h1 id="kinetic">Line them up.</h1></section>
+  <section class="counts"><div class="card"><span>Running</span><b id="cRun">0</b></div><div class="card"><span>Waiting</span><b id="cQ">0</b></div><div class="card"><span>Finished</span><b id="cDone">0</b></div></section>
+  <section class="card add">
+    <input id="title" placeholder="What should an agent do? e.g. Summarise today's tickets" aria-label="New task">
+    <select id="prio" aria-label="Priority"><option>High</option><option selected>Medium</option><option>Low</option></select>
+    <select id="agent" aria-label="Agent"></select>
+    <button class="primary" id="addBtn">Add task</button>
+  </section>
+  <div class="chips" id="chips"></div>
+  <section class="card"><ul class="queue" id="tasks"></ul></section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
