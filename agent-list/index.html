@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – AI Agent List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a class="active" href="#">Agents</a></nav>
+  <button class="primary" id="addBtn">New agent</button>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">AI Agent List</p>
+    <h1 id="kinetic">Meet your agents.</h1>
+  </section>
+  <section class="tools">
+    <label class="search"><input id="q" type="search" placeholder="Search agents or roles..." aria-label="Search agents"></label>
+    <div class="chips" id="chips"></div>
+    <select id="sort" aria-label="Sort agents"><option value="name">Sort: Name</option><option value="tasks">Sort: Most tasks</option><option value="rate">Sort: Success rate</option></select>
+    <div class="view"><button data-v="grid" class="on" aria-label="Grid view">Grid</button><button data-v="list" aria-label="List view">List</button></div>
+  </section>
+  <p class="count" id="count"></p>
+  <section id="list" class="grid"></section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
