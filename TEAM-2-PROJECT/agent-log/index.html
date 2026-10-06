@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Agent Activity Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Activity</a></nav>
+  <button class="primary" id="liveBtn">Pause live feed</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Agent Activity Log</p><h1 id="kinetic">Every move.</h1></section>
+  <section class="tools">
+    <input id="q" type="search" placeholder="Search the log..." aria-label="Search the log">
+    <select id="agent" aria-label="Agent"></select>
+    <select id="range" aria-label="Time range"><option value="60">Last hour</option><option value="1440" selected>Last 24 hours</option><option value="10080">Last 7 days</option></select>
+    <button class="ghost" id="export">Export CSV</button>
+  </section>
+  <div class="chips" id="chips"></div>
+  <p class="count" id="count"></p>
+  <section class="card"><ul class="log" id="log"></ul></section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
