@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blue">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – AI Agent Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="banner">8 agents online · 1 action waiting for your approval <a href="#approvalCard">Review now</a></div>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="#top">Overview</a><a href="#agentsCard">Agents</a><a href="#tasksCard">Task queue</a><a href="#approvalCard">Approvals <b id="navCount">1</b></a><a href="#logCard">Activity</a></nav>
+  <div class="actions"><button class="primary" id="newAgent">New agent</button></div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1 id="kinetic" aria-label="Agents in motion.">Agents in motion.</h1>
+    <p>Your team of AI agents has finished <strong id="heroCount">0</strong> tasks today. Watch them work, and step in when it matters.</p>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div id="marq"></div></div>
+
+  <section class="kpis">
+    <article><span>Active agents</span><strong data-count="8">0</strong><em class="up">+2 this week</em></article>
+    <article><span>Tasks completed</span><strong data-count="1284">0</strong><em class="up">+12.4%</em></article>
+    <article><span>Success rate</span><strong data-count="97" data-suffix="%">0</strong><em class="up">+0.8%</em></article>
+    <article><span>Avg. response</span><strong data-count="1.4" data-suffix="s" data-dec="1">0</strong><em class="down">+0.1s</em></article>
+  </section>
+
+  <section class="grid">
+    <article class="card wide">
+      <div class="card-head"><h2>Live throughput</h2><span class="live"><i></i>Live</span></div>
+      <svg id="chart" viewBox="0 0 600 200" preserveAspectRatio="none" role="img" aria-label="Tasks per minute"></svg>
+    </article>
+    <article class="card approve" id="approvalCard">
+      <div class="card-head"><h2>Needs your approval</h2></div>
+      <div id="approvalBody">
+        <p class="agent-line"><span class="avatar a3">Ra</span>Research Agent</p>
+        <p class="ask">Wants to send a summary report to 42 customers.</p>
+        <div class="btns"><button class="dark" data-act="approved">Approve</button><button class="outline" data-act="rejected">Reject</button></div>
+      </div>
+    </article>
+    <article class="card" id="agentsCard"><div class="card-head"><h2>Agents</h2></div><ul class="agents" id="agents"></ul></article>
+    <article class="card" id="tasksCard"><div class="card-head"><h2>Task queue</h2></div><ul class="tasks" id="tasks"></ul></article>
+    <article class="card wide" id="logCard"><div class="card-head"><h2>Activity log</h2></div><ul class="log" id="log"></ul></article>
+  </section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
