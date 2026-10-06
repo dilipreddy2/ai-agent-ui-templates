@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Agent Approval Interface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Approvals</a></nav>
+  <button class="primary" id="newReq">Simulate request</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Agent Approval Interface</p><h1 id="kinetic">Your call.</h1></section>
+  <section class="bar-top">
+    <div class="tabs" id="tabs"></div>
+    <label class="auto"><button class="sw" id="auto" aria-label="Auto-approve low risk requests"></button>Auto-approve low-risk requests</label>
+  </section>
+  <p class="hint">Keyboard: press <kbd>A</kbd> to approve or <kbd>R</kbd> to reject the highlighted request.</p>
+  <section class="reqs" id="reqs"></section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
