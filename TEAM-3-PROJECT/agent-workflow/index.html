@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Automation Workflow Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Workflows</a></nav>
+  <button class="primary" id="runBtn">Run flow</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Automation Workflow Builder · Trigger &amp; Action</p><h1 id="kinetic">Build the flow.</h1></section>
+  <section class="builder">
+    <aside class="card pal" id="pal"></aside>
+    <div class="card stage">
+      <div class="toolbar"><span class="hint2" id="hint"></span><button class="soft" id="clearBtn">Clear canvas</button></div>
+      <div id="canvas"><svg id="edges" aria-hidden="true"></svg><div id="nodes"></div></div>
+    </div>
+  </section>
+  <section class="low">
+    <div class="card"><h2>Block settings</h2><div id="settings"></div></div>
+    <div class="card"><h2>Run log</h2><ul id="runlog"><li><time></time><span>Press “Run flow” to test your workflow.</span></li></ul></div>
+  </section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

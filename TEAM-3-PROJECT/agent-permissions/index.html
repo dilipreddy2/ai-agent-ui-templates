@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Agent Permissions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Permissions</a></nav>
+  <button class="primary" id="resetBtn">Reset to defaults</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Agent Permissions</p><h1 id="kinetic">Set the limits.</h1></section>
+  <section class="ctl">
+    <div class="chips" id="agentChips"></div><span class="sep"></span>
+    <input id="q" type="search" placeholder="Search permissions..." aria-label="Search permissions">
+  </section>
+  <section class="ctl presets chips"><span>Quick setup for the selected agent:</span><button data-p="ro">Read-only</button><button data-p="std">Standard</button><button data-p="full">Trusted</button></section>
+  <section class="sum" id="sum"></section>
+  <section class="card"><div class="scroll"><table id="grid"></table></div>
+    <div class="legend"><span>Click a pill to change it:</span><span><b>Deny</b> = never allowed</span><span><b>Ask</b> = a person must approve first</span><span><b>Allow</b> = can do it alone</span></div>
+  </section>
+</main>
+<div class="savebar" id="savebar"><span id="dirtyTxt"></span><button class="drop" id="discard">Discard</button><button class="keep" id="save">Save changes</button></div>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

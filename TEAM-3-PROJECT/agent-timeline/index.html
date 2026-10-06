@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit – Agent Execution Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="logo"></span>Orbit</div>
+  <nav><a href="../agent-dashboard/index.html">Overview</a><a href="../agent-list/index.html">Agents</a><a class="active" href="#">Timeline</a></nav>
+  <button class="primary" id="replayTop">Replay run</button>
+</header>
+<main>
+  <section class="hero"><p class="eyebrow">Agent Execution Timeline</p><h1 id="kinetic">Step by step.</h1></section>
+  <section class="sum" id="sum"></section>
+  <section class="card ctrl">
+    <div class="info"><b>Run #4821 · Support Agent</b><small>Task: reply to a customer ticket</small></div>
+    <button class="primary" id="play">Pause</button>
+    <select id="speed" aria-label="Playback speed"><option value="1">1x speed</option><option value="2" selected>2x speed</option><option value="4">4x speed</option></select>
+    <div class="scrub"><span id="clock">0.0s</span><input type="range" id="scrub" min="0" max="1000" value="0" aria-label="Scrub through the run"></div>
+  </section>
+  <section class="card" style="margin-bottom:16px">
+    <h2>Waterfall</h2>
+    <div class="wf" id="wf"></div>
+    <div class="legend"><span style="--c:var(--model)">AI model</span><span style="--c:var(--tool)">Tool call</span><span style="--c:var(--human)">Human</span><span style="--c:var(--system)">System</span></div>
+  </section>
+  <section class="card"><h2>Steps (click one for details)</h2><ul class="tl" id="tl"></ul></section>
+</main>
+<div class="cursor-dot" id="cDot"></div><div class="cursor-ring" id="cRing"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
